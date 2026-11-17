@@ -23,6 +23,7 @@ pipeline {
                     docker run --rm \
                       -v "$WORKSPACE:/app" \
                       -w /app \
+                      -e PYTHONPATH=/app \
                       python:3.12-slim \
                       sh -c "pip install --no-cache-dir -r requirements-dev.txt && pytest -q"
                 '''
