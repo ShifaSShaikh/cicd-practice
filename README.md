@@ -25,4 +25,8 @@ pytest -q
 
 ## Jenkins
 
-The initial `Jenkinsfile` checks out this repository, runs tests in a temporary Python container, and builds a Docker image. Publishing to Amazon ECR and deploying to EC2 will be added in later stages.
+The pipeline checks out this repository, runs tests, builds a Docker image, pushes it to Amazon ECR, and deploys it to the Application EC2 instance.
+
+## Webhook automation test
+
+This commit verifies that a GitHub push event automatically triggers the Jenkins CI/CD pipeline.
