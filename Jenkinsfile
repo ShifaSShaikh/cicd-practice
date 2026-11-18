@@ -63,7 +63,6 @@ pipeline {
 
                         # Lab-only trust-on-first-use. Production should pre-load a verified host key.
                         ssh -o StrictHostKeyChecking=accept-new \
-                            -o IdentitiesOnly=yes \
                             "${APP_USER}@${APP_HOST}" \
                             "bash -s -- '${ECR_REGISTRY}/${ECR_REPO}:${BUILD_NUMBER}' '${AWS_REGION}' '${ECR_REGISTRY}'" <<'REMOTE_SCRIPT'
 set -euo pipefail
